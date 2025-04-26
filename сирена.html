@@ -1,41 +1,25 @@
 <!DOCTYPE html>
-
 <html lang="ru">
-
 <head>
-
   <meta charset="UTF-8">
-
   <title>Архив Петли — Сирена</title>
-
 </head>
-
 <body style="background-color: black; color: white; text-align: center; font-family: serif;">
-
-
 
   <h1>🕯️ Сирена</h1>
 
-
-
   <img src="https://raw.githubusercontent.com/kreourza/lore-infinity-loop/main/siren.jpg" alt="Сирена" style="width: 90%; max-width: 600px;">
 
-
-
-  <audio autoplay loop>
-
+  <audio id="myAudio" loop>
     <source src="https://media1.vocaroo.com/mp3/13FuYbED0T6C" type="audio/mpeg">
-
     Ваш браузер не поддерживает аудиоплеер.
-
   </audio>
 
-
+  <button onclick="document.getElementById('myAudio').play()" style="margin-top: 20px; padding: 10px 20px; font-size: 18px; background: #333; color: white; border: none; border-radius: 8px; cursor: pointer;">
+    🔊 Включить музыку
+  </button>
 
   <p><i>"Кто услышит три песни — найдёт путь сквозь Зеркало."</i></p>
 
-
-
 </body>
-
 </html>
