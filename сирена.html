@@ -14,14 +14,15 @@
       color: white;
       text-align: center;
     }
-    .background-video {
+    .video-background {
       position: fixed;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
       z-index: -1;
-      pointer-events: none; /* Чтобы клик не перехватывался */
+      opacity: 0.5; /* Сделать видео слегка прозрачным */
     }
     .content {
       position: relative;
@@ -32,13 +33,11 @@
 </head>
 <body>
 
-  <!-- Фон через iframe -->
-  <iframe class="background-video"
-    src="https://files.catbox.moe/mia3st.mp4"
-    frameborder="0"
-    allow="autoplay; fullscreen"
-    allowfullscreen>
-  </iframe>
+  <!-- Фон — видео -->
+  <video class="video-background" autoplay muted loop playsinline>
+    <source src="https://files.catbox.moe/mia3st.mp4" type="video/mp4">
+    Ваш браузер не поддерживает видео.
+  </video>
 
   <!-- Основной контент -->
   <div class="content">
