@@ -7,31 +7,54 @@
     html, body {
       margin: 0;
       padding: 0;
-      height: 100%;
-      overflow: hidden;
+      min-height: 100%;
       background-color: black;
       font-family: serif;
       color: white;
       text-align: center;
+      overflow-x: hidden; /* Скроллинг только по вертикали */
+    }
+    .background-image {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://raw.githubusercontent.com/kreourza/lore-infinity-loop/main/siren.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: -2;
+    }
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4); /* Тёмный дым поверх фона */
+      z-index: -1;
+      animation: fadeOverlay 8s ease-in-out infinite alternate; /* Плавное движение дыма */
     }
     .content {
       position: relative;
       z-index: 1;
-      padding-top: 10%;
-      animation: fadeIn 3s ease forwards; /* Плавное появление всей секции */
+      padding: 10% 10% 100px; /* Отступы сверху и снизу для скроллинга */
+      animation: fadeIn 3s ease forwards;
       opacity: 0;
     }
     img {
       width: 90%;
       max-width: 600px;
       margin-top: 20px;
-      animation: fadeIn 4s ease forwards; /* Плавное появление картинки */
+      animation: fadeIn 4s ease forwards;
       opacity: 0;
       animation-delay: 2s;
     }
     p {
       margin-top: 30px;
       font-style: italic;
+      font-size: 1.5em;
       animation: fadeIn 5s ease forwards;
       opacity: 0;
       animation-delay: 3s;
@@ -41,14 +64,31 @@
         opacity: 1;
       }
     }
+    @keyframes fadeOverlay {
+      0% { background: rgba(0, 0, 0, 0.4); }
+      50% { background: rgba(0, 0, 0, 0.5); }
+      100% { background: rgba(0, 0, 0, 0.4); }
+    }
   </style>
 </head>
 <body>
 
+  <!-- Фон — картинка на весь экран -->
+  <div class="background-image"></div>
+
+  <!-- Эффект дыма — затемняющий слой -->
+  <div class="overlay"></div>
+
+  <!-- Основной контент -->
   <div class="content">
-    <h1>🕯️ Сирена</h1> <!-- Свеча теперь статичная -->
+    <h1>🕯️ Сирена</h1>
     <img src="https://raw.githubusercontent.com/kreourza/lore-infinity-loop/main/siren.jpg" alt="Сирена">
     <p>"Кто услышит три песни — найдёт путь сквозь Зеркало."</p>
+    <p>Здесь можно добавить ещё текст... Например, дополнительный лор про Сирену.</p>
+    <p>Ещё пара строк, чтобы проверить скроллинг.</p>
+    <p>И ещё...</p>
+    <p>И ещё...</p>
+    <p>И ещё...</p>
   </div>
 
 </body>
